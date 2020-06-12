@@ -4,20 +4,20 @@
 WebGIS-Helper 是一款基于 Chrome 扩展的坐标系转换插件，帮助坐标的正确性。
 
 #### 软件架构
-软件架构说明
+WebGIS Helper 扩展运行在chrome浏览器中，使用 vue + Vuetify + Leaflet 等技术栈开发。
 
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  打开Chrome浏览器-设置-更多工具-扩展程序-打开开发者模式
+2.  克隆仓库，将manifest.json 所在的上级文件夹直接拖拽至步骤1中开发者工具页面，直接在开发者模式下运行该插件。
+2.  后续将支持使用 ctx 格式安装或直接在chrome 插件应用商店中下载安装。
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  输入经纬度坐标，选择坐标系的类型，点击转换，查看对应转换后的坐标；
+2.  点击定位按钮在地图中显示，要选择正确的转换格式，并在对应坐标系格式的地图中查看。地图的坐标系信息可在页首出查看；
+3.  如遇问题，欢迎反馈。
 
 #### 参与贡献
 
@@ -26,12 +26,3 @@ WebGIS-Helper 是一款基于 Chrome 扩展的坐标系转换插件，帮助坐�
 3.  提交代码
 4.  新建 Pull Request
 
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
