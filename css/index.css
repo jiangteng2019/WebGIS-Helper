@@ -1,0 +1,58 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+.map_selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+}
+
+.icon_position {
+    position: absolute;
+    top: 20%;
+    right: 10px;
+    cursor: pointer;
+}
+
+.popup_item_title {
+    display: inline-block;
+    min-width: 50px;
+}
+
+.switch_container {
+    position: absolute;
+    right: 20px;
+    bottom: -15px;
+}
+.v-input--switch {
+    padding-left: 10px;
+}
+
+input[type = "text"] {
+    border: none;
+}
+
+button {
+    min-width: initial !important;
+    min-height: initial !important;
+    background: initial !important;
+    box-shadow: initial !important;
+    border: initial !important;
+}
+.container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+}
+.v-input--selection-controls {
+    margin-top: 0 !important;
+}
