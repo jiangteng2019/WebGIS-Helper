@@ -3,6 +3,7 @@ new Vue({
     vuetify: new Vuetify(),
     data: {
         drawer: null,
+        valid: true,
         map: null,
         originPoint: [31.172800343248, 121.406021546488],
         originZoom: 5,
@@ -225,8 +226,6 @@ new Vue({
                     this.map.fitBounds([this.BD09]);
                     break;
             }
-            
-            
         },
 
         handleMapChange(id) {
@@ -275,7 +274,7 @@ new Vue({
 
     watch: {
         darkMode(value) {
-            value ? this.$vuetify.theme.dark = true : this.$vuetify.theme.dark = false
+            value ? this.$vuetify.theme.dark = true : this.$vuetify.theme.dark = false;
         }
     },
 
@@ -285,6 +284,6 @@ new Vue({
     },
 
     created() {
-        this.$vuetify.theme.dark = false
+        this.$vuetify.theme.dark = false;
     },
 })

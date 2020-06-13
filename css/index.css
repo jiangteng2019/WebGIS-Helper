@@ -16,6 +16,14 @@ html, body {
     z-index: 999;
 }
 
+.fill-height {
+    height: 100%;
+    position: relative;
+}
+.v-content, .v-content__wrap {
+    height: 100%;
+}
+
 .icon_position {
     position: absolute;
     top: 20%;
@@ -49,10 +57,16 @@ button {
     border: initial !important;
 }
 .container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-bottom: 0 !important;
+    padding: 0 !important;
 }
 .v-input--selection-controls {
     margin-top: 0 !important;
 }
+
+.v-navigation-drawer--is-mobile {
+    z-index: 999 !important;
+}
+.v-app-bar {
+    z-index: 999 !important;
+}
+
