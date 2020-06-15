@@ -51,6 +51,7 @@ new Vue({
         pickMode: false,
         darkMode: false,
         autoMode: false,
+        lastAutoMode: null,
         latitdue: 31.241464838702314,
         longitdue: 121.49531704483836,
         WGS84: [],
@@ -291,8 +292,11 @@ new Vue({
             if(value) {
                 document.getElementById('map').style.cursor = 'crosshair';
                 this.setCoordType();
+                this.lastAutoMode ? this.autoMode = true : '';
             }else {
                 document.getElementById('map').style.cursor = 'grab';
+                this.lastAutoMode = this.autoMode;  // 保存状态
+                this.autoMode = false;
             }
         }
 
