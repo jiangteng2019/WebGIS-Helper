@@ -40,10 +40,12 @@
                         </v-card-title>
                         <v-card-text>
                             <v-form ref="form" v-model="valid">
-                                <v-text-field label="纬度" v-model="latitdue" dense clearable :rules="rules.latitdue"></v-text-field>
-                                <v-text-field label="经度" v-model="longitdue" dense clearable :rules="rules.longitude"></v-text-field>
+                                <!-- <v-text-field label="纬度" v-model="latitdue" dense clearable :rules="rules.latitdue" :disabled="pickMode"></v-text-field>
+                                <v-text-field label="经度" v-model="longitdue" dense clearable :rules="rules.longitude" :disabled="pickMode"></v-text-field> -->
+                                <v-text-field label="纬度" v-model="latitdue" dense clearable :disabled="pickMode"></v-text-field>
+                                <v-text-field label="经度" v-model="longitdue" dense clearable :disabled="pickMode"></v-text-field>
                             </v-form>
-                            <v-radio-group dense v-model="coordType">
+                            <v-radio-group dense v-model="coordType" :disabled="pickMode">
                                 <v-row>
                                     <v-col cols="4" v-for="(value, name) in coordTypeObj" :key="value">
                                         <v-radio :label="`${name}`" :value="value"></v-radio>
@@ -105,9 +107,9 @@
                     <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
                     <v-toolbar-title>WebGIS Helper</v-toolbar-title>
                     <v-row class="switch_container">
-                        <v-switch v-model="pickMode" label="pickMode"></v-switch>
-                        <v-switch v-model="darkMode" label="暗黑模式"></v-switch>
-                        <v-switch v-model="autoMode" label="自动转换"></v-switch>
+                        <v-switch v-model="pickMode" label="Pick Mode" @change="handlePickModeChange"></v-switch>
+                        <v-switch v-model="darkMode" label="Dark Mode"></v-switch>
+                        <v-switch v-model="autoMode" label="Auto Conver"></v-switch>
                     </v-row>
                 </v-app-bar>
 

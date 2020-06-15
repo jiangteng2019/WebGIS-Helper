@@ -91,6 +91,17 @@ new Vue({
                     this.initBaiduMap();
                     break;
             }
+            this.map.on('click', (e) => {
+                if(this.pickMode) {
+                    this.setCoordType();
+                    let {lat, lng} = e.latlng;
+                    this.latitdue = lat;
+                    this.longitdue = lng;
+                    if(this.autoMode) {
+                        this.handleClick();
+                    }
+                }
+            })
         },
 
         initTianMap() {
@@ -242,6 +253,12 @@ new Vue({
             }
         },
 
+        setCoordType() {
+            if(this.pickMode) {
+                this.coordType = this.coordTypeObj[this.Coordinate];
+            }
+        },
+
         handleClick() {
             let valid = this.$refs.form.validate();
             if(valid) {
@@ -267,6 +284,15 @@ new Vue({
                         this.BD09= [this.latitdue, this.longitdue];
                         break;
                 }
+            }
+        },
+
+        handlePickModeChange(value) {
+            if(value) {
+                document.getElementById('map').style.cursor = 'crosshair';
+                this.setCoordType();
+            }else {
+                document.getElementById('map').style.cursor = 'grab';
             }
         }
 
