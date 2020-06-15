@@ -108,8 +108,8 @@
                     <v-toolbar-title>WebGIS Helper</v-toolbar-title>
                     <v-row class="switch_container">
                         <v-switch v-model="pickMode" label="Pick Mode" @change="handlePickModeChange"></v-switch>
+                        <v-switch v-model="autoMode" label="Auto Conver" :disabled="!pickMode"></v-switch>
                         <v-switch v-model="darkMode" label="Dark Mode"></v-switch>
-                        <v-switch v-model="autoMode" label="Auto Conver"></v-switch>
                     </v-row>
                 </v-app-bar>
 
