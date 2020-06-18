@@ -1,36 +1,21 @@
 # WebGIS Helper
 
 #### Description
-WebGIS-Helper 是一款基于 Chrome 扩展的坐标系转换插件，帮助坐标的正确性。
+WebGIS-Helper is a coordinate system conversion plugin based on Chrome extension.
 
 #### Software Architecture
-Software architecture description
+The WebGIS Helper extension runs in the chrome browser and is developed using technology stacks such as vue + Vuetify + Leaflet.
 
 #### Installation
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. Open the Chrome browser-Settings-More tools-Extensions-Open the developer mode;
+2. Clone the warehouse, drag and drop the superior folder where manifest.json is directly to the developer tool page in step 1, and run the plug-in directly in developer mode;
+2. The follow-up will support installation using ctx format or download and install directly in the chrome plug-in application store.
 
 #### Instructions
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. Enter the latitude and longitude coordinates, select the type of coordinate system, click Convert, and view the corresponding converted coordinates;
+2. Click the positioning button to display in the map, pay attention to choose the correct conversion format, and view in the map of the corresponding coordinate system; the coordinate system information of the map can be viewed at the top;
+3. In case of problems, feedback is welcome.
 
 #### Contribution
-
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
-
-
-#### Gitee Feature
-
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)

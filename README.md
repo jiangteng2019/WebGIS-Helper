@@ -1,7 +1,7 @@
 # WebGIS Helper
 
 #### 介绍
-WebGIS-Helper 是一款基于 Chrome 扩展的坐标系转换插件，帮助坐标的正确性。
+WebGIS-Helper 是一款基于 Chrome 扩展的坐标系转换插件，验证坐标转换的正确性。
 
 #### 软件架构
 WebGIS Helper 扩展运行在chrome浏览器中，使用 vue + Vuetify + Leaflet 等技术栈开发。
@@ -20,9 +20,3 @@ WebGIS Helper 扩展运行在chrome浏览器中，使用 vue + Vuetify + Leaflet
 3.  如遇问题，欢迎反馈。
 
 #### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
