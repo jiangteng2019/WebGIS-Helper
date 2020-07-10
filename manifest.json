@@ -1,35 +1,37 @@
 {
-    "manifest_version": 2,
-    "name": "WebGIS Helper",
-    "description": "This extension Provide WebGIS related tools",
-    "version": "1.0",
-    "permissions": [
-        "contextMenus",
+	"manifest_version": 2,
+	"name": "WebGIS Helper",
+	"description": "This extension Provide WebGIS related tools",
+	"version": "1.0",
+	"permissions": [
+		"contextMenus",
 		"tabs",
 		"notifications",
 		"webRequest",
 		"webRequestBlocking",
-        "storage",
-        "http://*/*",
+		"storage",
+		"http://*/*",
 		"https://*/*"
-    ],
-    "browser_action": {
-        "default_icon": "img/map.png",
-        "default_title": "WebGIS Helper"
-    },
-    "background": {
-        "scripts": ["js/background.js"],
-        "persistent": true
-    },
-    "options_page": "html/index.html",
-    "options_ui": {
+	],
+	"browser_action": {
+		"default_icon": "img/map.png",
+		"default_title": "WebGIS Helper"
+	},
+	"background": {
+		"scripts": [
+			"js/background.js"
+		],
+		"persistent": true
+	},
+	"options_page": "html/index.html",
+	"options_ui": {
 		"page": "html/index.html",
 		"chrome_style": true
-    },
-    "icons": {
+	},
+	"icons": {
 		"16": "img/map.png",
 		"48": "img/map.png",
 		"128": "img/map.png"
-    },
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+	},
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
