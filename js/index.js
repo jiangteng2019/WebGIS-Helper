@@ -207,10 +207,12 @@ new Vue({
             function setContent(p) {
                 let content = `
                     <div class="popup_container">
+                        <!--
                         <div class="popup_item">
-                            <span class="popup_item_title">坐标系：</span>
-                            <span>WGS84</span> 
+                            <span class="popup_item_title"></span>
+                            <span></span> 
                         </div>
+                        -->
                         <div class="popup_item">
                             <span class="popup_item_title">纬度：</span>
                             <span>${p[0]}</span>  
