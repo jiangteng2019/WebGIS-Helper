@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>WebGIS Helper</title>
+    <script src="./js/vue.js"></script>
+    <script src="./js/vuetify.js"></script>
+    <script src="./js/leaflet.js"></script>
+    <script src="./js/leaflet.ChineseTmsProviders.js"></script>
+    <script src="./js/proj4.js"></script>
+    <script src="./js/proj4leaflet.js"></script>
+    <script src="./js/gcoord.js"></script>
+    <script src="./js/coorTransform.js"></script>
+    <link rel="stylesheet" href="./css/leaflet.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <v-app id="inspire">
+            <v-app id="inspire">
+                <v-navigation-drawer v-model="drawer" app clipped width="320">
+                    <v-card>
+                        <v-card-title>
+                            当前地图坐标系
+                        </v-card-title>
+                        <v-card-subtitle>
+                            {{Coordinate}}
+                        </v-card-subtitle>
+                    </v-card>
+
+                    <v-card>
+                        <v-card-title>
+                            输入坐标
+                        </v-card-title>
+                        <v-card-text>
+                            <v-form ref="form" v-model="valid">
+                                <!-- <v-text-field label="纬度" v-model="latitdue" dense clearable :rules="rules.latitdue" :disabled="pickMode"></v-text-field>
+                                <v-text-field label="经度" v-model="longitdue" dense clearable :rules="rules.longitude" :disabled="pickMode"></v-text-field> -->
+                                <v-text-field label="纬度" v-model="latitdue" dense clearable :disabled="pickMode"></v-text-field>
+                                <v-text-field label="经度" v-model="longitdue" dense clearable :disabled="pickMode"></v-text-field>
+                            </v-form>
+                            <v-radio-group dense v-model="coordType" :disabled="pickMode">
+                                <v-row>
+                                    <v-col cols="4" v-for="(value, name) in coordTypeObj" :key="value">
+                                        <v-radio :label="`${name}`" :value="value"></v-radio>
+                                    </v-col>
+                                </v-row>
+                            </v-radio-group>
+                        </v-card-text>
+                        <v-card-text style="text-align: center;">
+                            <v-btn color="primary" @click="handleClick">
+                                转换
+                            </v-btn>
+                        </v-card-text>
+                    </v-card>
+
+                    <v-divider></v-divider>
+
+                    <v-card>
+                        <v-card-title>
+                            WGS84
+                        </v-card-title>
+                        <v-card-text style="position:relative;">
+                            <div>纬度: {{ WGS84[0] }}</div>
+                            <div>经度: {{ WGS84[1] }}</div>
+                            <div class="icon_position" @click="addMarker('WGS84')">
+                                <v-icon dark right color="#1867C0">mdi-map-marker</v-icon>
+                            </div>
+                        </v-card-text>
+                    </v-card>
+
+                    <v-card>
+                        <v-card-title>
+                            GCJ02
+                        </v-card-title>
+                        <v-card-text style="position:relative;">
+                            <div>纬度: {{ GCJ02[0] }}</div>
+                            <div>经度: {{ GCJ02[1] }}</div>
+                            <div class="icon_position" @click="addMarker('GCJ02')">
+                                <v-icon dark right color="#1867C0">mdi-map-marker</v-icon>
+                            </div>
+                        </v-card-text>
+                    </v-card>
+
+                    <v-card>
+                        <v-card-title>
+                            BD09
+                        </v-card-title>
+                        <v-card-text style="position:relative;">
+                            <div>纬度: {{ BD09[0] }}</div>
+                            <div>经度: {{ BD09[1] }}</div>
+                            <div class="icon_position" @click="addMarker('BD09')">
+                                <v-icon dark right color="#1867C0">mdi-map-marker</v-icon>
+                            </div>
+                        </v-card-text>
+                    </v-card>
+
+                </v-navigation-drawer>
+
+                <v-app-bar app clipped-left>
+                    <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+                    <v-toolbar-title>WebGIS Helper</v-toolbar-title>
+                    <v-row class="switch_container">
+                        <v-switch v-model="pickMode" label="Pick Mode" @change="handlePickModeChange"></v-switch>
+                        <v-switch v-model="autoMode" label="Auto Conver" :disabled="!pickMode"></v-switch>
+                        <v-switch v-model="darkMode" label="Dark Mode"></v-switch>
+                    </v-row>
+                </v-app-bar>
+
+                <v-content>
+                    <v-container class="fill-height" fluid>
+                        <div id="map"></div>
+                        <div class="map_selector">
+                            <v-select :items="mapOptions" label="选择地图" dense solo :value=mapId @change="handleMapChange">
+                            </v-select>
+                        </div>
+                    </v-container>
+                </v-content>
+            </v-app>
+        </v-app>
+    </div>
+</body>
+
+<script src="./js/index.js"></script>
+
+</html>
