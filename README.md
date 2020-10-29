@@ -1,6 +1,6 @@
 # WebGIS Helper
 
-###### [预览](http://htmlpreview.github.io/?https://github.com/jiangteng2019/WebGIS-Helper/blob/master/html/index.html)
+###### [预览](https://jiangteng2019.github.io/WebGIS-Helper/)
 
 #### 介绍
 WebGIS-Helper 是一款基于 Chrome 扩展的坐标系转换插件，验证坐标转换的正确性。
