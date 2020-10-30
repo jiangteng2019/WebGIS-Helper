@@ -293,7 +293,7 @@ new Vue({
         handlePickModeChange(value) {
             if(value) {
                 document.getElementById('map').style.cursor = 'crosshair';
-                this.setCoordType();
+                // this.setCoordType();
                 this.lastAutoMode ? this.autoMode = true : '';
             }else {
                 document.getElementById('map').style.cursor = 'grab';
