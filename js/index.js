@@ -102,6 +102,16 @@ new Vue({
                         this.handleClick();
                     }
                 }
+            });
+
+            this.map.on('zoomend', e => {
+                let zoom = e.target._zoom;
+                this.originZoom = zoom;
+            });
+
+            this.map.on('moveend', e => {
+                let center = this.map.getCenter();
+                this.originPoint = [center.lat, center.lng];
             })
         },
 
