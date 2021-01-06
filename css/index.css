@@ -39,7 +39,7 @@ html, body {
 .switch_container {
     position: absolute;
     right: 20px;
-    bottom: -15px;
+    bottom: 0px;
 }
 .v-input--switch {
     padding-left: 10px;
